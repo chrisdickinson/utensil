@@ -1,0 +1,19 @@
+{
+  "name": "utensil",
+  "version": "0.0.0",
+  "description": "a utensil to fork and monitor servers across cpus",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "utensil":"./bin/utensil"
+  },
+  "license": "BSD",
+  "dependencies": {
+    "nopt": "~1.0.10"
+  },
+  "engines": {
+    "node":">=0.8.0"
+  }
+}
