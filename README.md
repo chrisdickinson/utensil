@@ -6,6 +6,9 @@ A command-line tool for running node.js servers.
 * Uses adaptors to send process metrics to monitoring
 * Uses node 0.8's `domain` module to catch and report errors per-request
 * Programmatic interface as well as CLI
+* Catches uncaughtExceptions and closes the request they were associated with
+  and reports the error!
+* Redirects all console.log statements to your adaptor module.
 
 ````sh
 $ ls .
@@ -107,6 +110,22 @@ All `console` output will be redirected to the adaptor, as well.
 , "subtype": "error" | "warn" | "log"
 , "data": [arguments to console] } 
 ````
+
+## Example adaptor
+
+````javascript
+// console.js
+
+// simply output everything.
+module.exports = function(pid, msg) {
+  console.log('#%s %s/%s', pid, msg.type, msg.subtype, msg.data)
+}
+
+// run it with 
+//     utensil --adaptor path/to/console.js
+
+````
+
 
 ## License
 
