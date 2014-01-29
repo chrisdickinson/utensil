@@ -1,6 +1,6 @@
 {
   "name": "utensil",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a utensil to fork and monitor servers across cpus",
   "main": "index.js",
   "scripts": {
